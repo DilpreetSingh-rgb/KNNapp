@@ -20,13 +20,6 @@ df = pd.DataFrame({
 df.head()
 df['result'] = (df["study_hours"] * df["iq"] >= 400).astype(int) 
 df.sample(10)
-#### Data Visualization
-import matplotlib.pyplot as plt
-import seaborn as sns
-df.hist(figsize=(12,10))
-plt.show()
-sns.scatterplot(x="study_hours",y="iq",hue="result",data=df)
-plt.show()
 #### Modeling
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -67,4 +60,5 @@ if st.button("Predict Result"):
         st.balloons()
     else:
         st.error("❌ Result: FAIL")
+
 
